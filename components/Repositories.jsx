@@ -2,8 +2,8 @@ import React from 'react'
 
 const Repositories = () => {
   return (
-    <div>
-        
+    <div className='col-span-2 ' >
+        Repositories
     </div>
   )
 }

@@ -16,7 +16,7 @@ export default function Home() {
       <Header/>
       <Navbar/>
 
-      <div className='flex bg-[#0D1117] w-full h-full '>
+      <div className='grid grid-cols-3 max-w-6xl w-full h-full absolute '>
         <UserProfile/>
         <Repositories/>
       </div>
