@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BsFillCircleFill } from 'react-icons/bs'
+import { AiOutlineStar } from 'react-icons/ai'
+import { TbGitFork } from 'react-icons/tb'
 import moment from 'moment'
 import Moment from 'react-moment';
 
@@ -24,15 +26,31 @@ const Repositories = ({ user }) => {
                 {/* Will do mapping here later  */}
                 {repos.map(repo => {
                     return <div key={repo.id} className=' bg-[#0D1117] border-t-[1px] border-b-[1px] border-[#21272C] border-solid w-[800px] h-[165px] py-[10px] '>
+
                         {/* repo name  */}
                         <p className=' text-[#58A6FF] cursor-pointer text-xl font-semibold hover:underline mt-[10px] '>{repo.name}</p>
+
                         {/* Description  */}
                         <p className='text-[#8B959F] text-md font-normal mt-[5px] ml-0  '>{repo.description}</p>
+
                         {/* most used language  */}
                         <BsFillCircleFill className='text-[#8B959F] text-md font-normal hover:underline mt-[35px]' color={`${repo.language === 'JavaScript' ? 'yellow' : repo.language === 'CSS' ? 'red' : repo.language === 'HTML' ? 'orange' : 'gray'}`} />
-                        <p className='text-[#8B959F] text-sm font-normal mt-[-20px] ml-5 ' >{repo.language ? repo.language : 'no lang used'}</p>
+                        <p className='text-[#8B959F] text-sm font-normal mt-[-20px] ml-5 ' >{repo.language ? repo.language : 'no lang'}</p>
+
+                        {/* star  */}
+                        <div className='flex mt-[-19px] ml-[90px] items-center space-x-1 '>
+                            <AiOutlineStar className='text-[#8B959F] text-md font-normal hover:underline ' color='8B959F' />
+                            <p className='text-[#8B959F] text-sm font-normal ' >{repo.stargazers_count ? repo.stargazers_count : '0'}</p>
+                        </div >
+
+                        {/* fork  */}
+                        <div className='flex mt-[-19px] ml-[130px] items-center space-x-1 '>
+                            <TbGitFork className='text-[#8B959F] text-md font-normal hover:underline ' color='8B959F' />
+                            <p className='text-[#8B959F] text-sm font-normal ' >{repo.forks_count ? repo.forks_count : '0'}</p>
+                        </div >
+
                         {/* Upadated  */}
-                        <p className='text-[#8B959F] text-sm font-normal mt-[-20px] ml-[110px] '>
+                        <p className='text-[#8B959F] text-sm font-normal mt-[-20px] ml-[180px] '>
                             {repo.updated_at}
                         </p>
                     </div>
