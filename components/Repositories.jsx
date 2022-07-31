@@ -29,11 +29,11 @@ const Repositories = ({ user }) => {
                         {/* Description  */}
                         <p className='text-[#8B959F] text-md font-normal mt-[5px] ml-0  '>{repo.description}</p>
                         {/* most used language  */}
-                        <BsFillCircleFill className='text-[#8B959F] text-md font-normal hover:underline mt-[35px]' color='yellow' />
-                        <p className='text-[#8B959F] text-sm font-normal mt-[-20px] ml-5 ' >{repo.language}</p>
+                        <BsFillCircleFill className='text-[#8B959F] text-md font-normal hover:underline mt-[35px]' color={`${repo.language === 'JavaScript' ? 'yellow' : repo.language === 'CSS' ? 'red' : repo.language === 'HTML' ? 'orange' : 'gray'}`} />
+                        <p className='text-[#8B959F] text-sm font-normal mt-[-20px] ml-5 ' >{repo.language ? repo.language : 'no lang used'}</p>
                         {/* Upadated  */}
                         <p className='text-[#8B959F] text-sm font-normal mt-[-20px] ml-[110px] '>
-                                {repo.updated_at}
+                            {repo.updated_at}
                         </p>
                     </div>
                 })}

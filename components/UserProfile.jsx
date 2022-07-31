@@ -25,7 +25,7 @@ const UserProfile = ({ user }) => {
           <button className='bg-[#30373C] px-32 py-1 text-base text-[#C9D0D8] rounded-md absolute left-[200px]  top-[315px] text-center border-[1px] border-solid border-[#363B42] hover:border-[#8A959E] hover:bg-[#454e55] '>Follow</button>
 
           {/* bio  */}
-          <p className='text-md text-[#AAB0B8] w-[330px] absolute left-[200px] top-[360px] tracking-wide '>{(user.bio).substring(0, 80) + '...'}</p>
+          <p className='text-md text-[#AAB0B8] w-[330px] absolute left-[200px] top-[360px] tracking-wide '>{user.bio && (user.bio).substring(0, 80) + '...'}</p>
 
           {/* followers  */}
           <div className='absolute left-[200px] top-[415px] flex text-[#8A959E] space-x-1'>
