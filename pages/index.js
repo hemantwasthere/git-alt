@@ -20,8 +20,7 @@ export default function Home() {
       </Head>
 
       <Header searchValue={searchValue} setSearchValue={setSearchValue} user={user}  setUser={setUser} />
-      <Navbar />
-
+      <Navbar user={user} />
       <UserProfile user={user}  />
       <Repositories user={user}  />
 
