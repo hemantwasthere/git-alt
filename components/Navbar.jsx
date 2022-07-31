@@ -6,7 +6,7 @@ import { FiBox } from 'react-icons/fi'
 
 const Navbar = () => {
     return (
-        <div className='w-full h-[100px] z-50 absolute flex bg-[#0D1117] border-b-[2px] border-[#30373C] '>
+        <div className='w-full h-[100px] absolute flex bg-[#0D1117] border-b-[2px] border-[#30373C] '>
             <div className='flex absolute bottom-2 left-[550px] space-x-7 ' >
                 {/* Overview  */}
                 <div className='flex space-x-2 items-center px-2 py-[4px] focus:border-b-[4px] focus-within:border-[#F68066] cursor-pointer hover:bg-[#20262D] rounded-md  '>
