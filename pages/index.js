@@ -3,8 +3,14 @@ import Navbar from '../components/Navbar'
 import Header from '../components/Header'
 import UserProfile from '../components/UserProfile'
 import Repositories from '../components/Repositories'
+import { useState } from 'react'
 
 export default function Home() {
+  
+  const [searchValue, setSearchValue] = useState()
+  const [user, setUser] = useState()
+
+
   return (
     <div>
       <Head>
@@ -13,11 +19,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header searchValue={searchValue} setSearchValue={setSearchValue} user={user}  setUser={setUser} />
       <Navbar />
 
-      <UserProfile />
-      <Repositories />
+      <UserProfile user={user}  />
+      <Repositories user={user}  />
 
     </div>
   )
