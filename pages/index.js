@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
+import Header from '../components/Header'
+import UserProfile from '../components/UserProfile'
+import Repositories from '../components/Repositories'
 
 export default function Home() {
   return (
@@ -10,7 +13,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header/>
       <Navbar/>
+
+      <div className='flex bg-[#0D1117] w-full h-full '>
+        <UserProfile/>
+        <Repositories/>
+      </div>
 
     </div>
   )

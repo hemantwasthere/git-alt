@@ -1,31 +1,41 @@
 import React from 'react'
-import {AiFillGithub} from 'react-icons/ai'
-import {GiHamburgerMenu} from 'react-icons/gi'
+import { IoBookOutline } from 'react-icons/io5'
+import { RiBookMarkLine } from 'react-icons/ri'
+import { AiOutlineDatabase, AiOutlineStar } from 'react-icons/ai'
+import { FiBox } from 'react-icons/fi'
 
 const Navbar = () => {
-  return (
-    // navbar container  
-    <div className='px-3 md:px-5 lg:px-7 flex-wrap md:flex-nowrap bg-[#171A22] flex '>
-        <div className='py-3 mr-5 hidden md:flex cursor-pointer' >
-            <AiFillGithub color='white' size={38} />
-        </div>
-        <div className='md:hidden mr-5 cursor-pointer' >
-            <GiHamburgerMenu color='white' size={30} />
-        </div>
-
-        {/* navbar subcontainer  */}
-        <div className='flex flex-col md:flex-row w-full flex-[2] md:flex-[0] mr-0 mt-3 md:mt-[0] md:flex ' >
-
-            {/* search input  */}
-            <div className="flex-auto relative self-stretch md:self-auto my-[15px] md:mb-0 mr-0 md:mr-3 ">
-                <div className='relative w-fit border-[1px] border-[#30373C] text-[#C2C3C5] rounded-lg transition-all duration-500  ' >
-                    <input type="text" className='bg-[#0D1117] rounded-lg pl-3 py-1 focus:w-[500px] outline-[#232424] ' placeholder='Search or jump to...' />
+    return (
+        <div className='w-full h-[100px] absolute flex bg-[#0D1117] border-b-[2px] border-[#30373C] '>
+            <div className='flex absolute bottom-2 left-[550px] space-x-9 ' >
+                {/* Overview  */}
+                <div className='flex space-x-2 items-center transition-all duration-500 focus:border-b-[4px] focus-within:border-[#F68066] cursor-pointer  '>
+                    <IoBookOutline color='8B959F' />
+                    <span className='text-[#C8D0D9] text-lg '>Overview</span>
+                </div>
+                {/* Repositories  */}
+                <div className='flex space-x-2 items-center transition-all duration-500 focus:border-b-[4px] focus-within:border-[#F68066] cursor-pointer  '>
+                    <RiBookMarkLine color='8B959F' />
+                    <span className='text-[#C8D0D9] text-lg '>Repositories</span>
+                </div>
+                {/* Projects  */}
+                <div className='flex space-x-2 items-center transition-all duration-500 focus:border-b-[4px] focus-within:border-[#F68066] cursor-pointer  '>
+                    <AiOutlineDatabase color='8B959F' />
+                    <span className='text-[#C8D0D9] text-lg '>Projects</span>
+                </div>
+                {/* Packages  */}
+                <div className='flex space-x-2 items-center transition-all duration-500 focus:border-b-[4px] focus-within:border-[#F68066] cursor-pointer  '>
+                    <FiBox color='8B959F' />
+                    <span className='text-[#C8D0D9] text-lg '>Packages</span>
+                </div>
+                {/* Stars  */}
+                <div className='flex space-x-2 items-center transition-all duration-500 focus:border-b-[4px] focus-within:border-[#F68066] cursor-pointer  '>
+                    <AiOutlineStar color='8B959F' />
+                    <span className='text-[#C8D0D9] text-lg '>Stars</span>
                 </div>
             </div>
-
         </div>
-    </div>
-  )
+    )
 }
 
 export default Navbar
