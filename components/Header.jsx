@@ -19,8 +19,8 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser, user }) => {
 
                 {/* search input  */}
                 <div className="flex-auto relative self-stretch md:self-auto my-[15px] md:mb-0 mr-0 md:mr-3 ">
-                    <div className='relative w-fit border-[1px] border-[#30373C] rounded-lg transition-all duration-500 ' >
-                        <input value={searchValue} onKeyDown={(e) => fetchUser(e)} onChange={(e) => setSearchValue(e.target.value)} type="text" className='bg-[#0D1117] text-[#C3C3C4] transition-all duration-500 ease-in-out w-[300px]  rounded-lg pl-3 py-1 focus:w-[500px] outline-[#232424] placeholder:text-[#C3C3C4] ' placeholder='Search or jump to...' />
+                    <div className='relative w-fit border-[1px] border-[#30373C] rounded-lg ' >
+                        <input value={searchValue} onKeyDown={(e) => fetchUser(e)} onChange={(e) => setSearchValue(e.target.value)} type="text" className='bg-[#0D1117] text-[#C3C3C4] transition-all duration-300 ease-in-out w-[300px]  rounded-lg pl-3 py-1 focus:w-[500px] outline-[#232424] placeholder:text-[#C3C3C4] ' placeholder='Search or jump to...' />
                     </div>
                 </div>
 
