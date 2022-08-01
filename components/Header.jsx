@@ -5,7 +5,7 @@ import { signInWithPopup, signOut } from 'firebase/auth'
 import { auth, provider } from '../firebase'
 import { useState } from 'react'
 
-const Navbar = ({ searchValue, setSearchValue, fetchUser, user }) => {
+const Navbar = ({ searchValue, setSearchValue, fetchUser }) => {
 
     const [currentUser, setCurrentUser] = useState(null)
     const [showModal, setShowModal] = useState(false)
@@ -13,7 +13,6 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser, user }) => {
     const handleSignIn = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
-                console.log(result)
                 setCurrentUser(result.user)
             }).catch((error) => {
                 console.log(error)
@@ -61,9 +60,7 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser, user }) => {
 
                     {/* Explore  */}
                     <p className='font-semibold text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>Explore</p>
-
                 </div>
-
             </div>
 
             {/* user image  */}
@@ -76,8 +73,9 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser, user }) => {
                 </div>
                 : <p onClick={handleSignIn} className='font-semibold absolute right-0 top-[20px] w-[140px] text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>Sign in with GitHub</p>
             }
-            {
-                showModal && <div onClick={() => { setShowModal(false), handleSignOut() }} className='absolute bg-[#161A23] text-[#C9D1D9] border-[1px] border-[#31363C] rounded-md right-5 z-50 top-[50px] ' >
+
+            {/* modal  */}
+            {showModal && <div onClick={() => { setShowModal(false), handleSignOut() }} className='absolute bg-[#161A23] text-[#C9D1D9] border-[1px] border-[#31363C] rounded-md right-5 z-50 top-[50px] ' >
 
                     {/* tooltip  */}
                     <div className="absolute top-[-9.5px] left-[168px] ">
