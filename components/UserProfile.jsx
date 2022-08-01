@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TbUsers } from 'react-icons/tb'
 import { MdOutlineLocationOn } from 'react-icons/md'
 import { HiOutlineMail } from 'react-icons/hi'
@@ -7,6 +7,9 @@ import { BsTwitter } from 'react-icons/bs'
 
 
 const UserProfile = ({ user }) => {
+
+  const [follow, setFollow] = useState(false)
+
   return (
     <>
       {user &&
@@ -22,7 +25,7 @@ const UserProfile = ({ user }) => {
           <p className='text-lg text-[#8B959F] absolute left-[200px]  top-[275px] tracking-wide '>{user.login}</p>
 
           {/* Follow Button  */}
-          <button className='bg-[#30373C] px-32 py-1 text-base text-[#C9D0D8] rounded-md absolute left-[200px]  top-[315px] text-center border-[1px] border-solid border-[#363B42] hover:border-[#8A959E] hover:bg-[#454e55] '>Follow</button>
+          <button onClick={()=>setFollow(!follow)} className='bg-[#20272D] w-[320px] py-1 text-base text-[#C9D0D8] rounded-md absolute left-[200px]  top-[315px] text-center border-[1px] border-solid border-[#363B42] hover:border-[#8A959E] hover:bg-[#454e55] '>{follow ? 'Follow': 'Unfollow'}</button>
 
           {/* bio  */}
           <p className='text-md text-[#AAB0B8] w-[330px] absolute left-[200px] top-[360px] tracking-wide '>{user.bio && (user.bio).substring(0, 80) + '...'}</p>
@@ -60,13 +63,13 @@ const UserProfile = ({ user }) => {
           {/* site or portfolio  */}
           {user.blog && <div className=' absolute font-base left-[200px] top-[500px] flex space-x-1 text-[#C9D0D8] items-center '>
             <BiLink />
-            <p className='hover:text-[#59A7FF] cursor-pointer hover:underline'>{user.blog}</p>
+            <a href={`https://${user.blog}`} rel="noreferrer" target='_blank' className='hover:text-[#59A7FF] cursor-pointer hover:underline'>{user.blog}</a>
           </div>}
 
           {/* twitter  */}
           {user.twitter_username && <div className=' absolute font-base left-[200px] top-[525px] flex space-x-1 text-[#C9D0D8] items-center '>
             <BsTwitter />
-            <p className='hover:text-[#59A7FF] cursor-pointer hover:underline'>{user.twitter_username}</p>
+            <a href={`https://twitter.com/${user.twitter_username}`} rel="noreferrer" target='_blank' className='hover:text-[#59A7FF] cursor-pointer hover:underline'>{user.twitter_username}</a>
           </div>}
 
         </div>
