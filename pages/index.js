@@ -6,11 +6,21 @@ import Repositories from '../components/Repositories'
 import { useState } from 'react'
 
 export default function Home() {
+
+  const [searchValue, setSearchValue] = useState('')
+  const [user, setUser] = useState({})
+
+  const fetchUser = (e) => {
+    if (e.key === 'Enter') {
+      const options = { method: 'GET' };
+      fetch(`https://api.github.com/users/${searchValue}`, options)
+        .then(response => response.json())
+        .then(response => setUser(response))
+        .catch(err => console.error(err + '💀💀💀💀'));
+      setSearchValue('')
+    }
+  }
   
-  const [searchValue, setSearchValue] = useState()
-  const [user, setUser] = useState()
-
-
   return (
     <div>
       <Head>
@@ -19,10 +29,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header searchValue={searchValue} setSearchValue={setSearchValue} user={user}  setUser={setUser} />
+      <Header fetchUser={fetchUser} searchValue={searchValue} setSearchValue={setSearchValue} user={user} setUser={setUser} />
       <Navbar user={user} />
-      <UserProfile user={user}  />
-      <Repositories user={user}  />
+      <UserProfile user={user} />
+      <Repositories user={user} />
 
     </div>
   )
