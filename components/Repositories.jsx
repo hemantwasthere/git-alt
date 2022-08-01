@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Repo from './repo'
+import Repo from './Repo'
 
 
 const Repositories = ({ user }) => {
