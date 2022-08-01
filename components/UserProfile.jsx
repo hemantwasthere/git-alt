@@ -18,7 +18,7 @@ const UserProfile = ({ user }) => {
         <div className='bg-[#0D1117] absolute left-[0px] top-[162.5px] w-[550px]  '>
           {/* profile image  */}
           <div className='ml-[200px] mt-[-56px] z-50 '>
-            {user.avatar_url ? <img width={300} className='rounded-full' src={user.avatar_url} alt="" />
+            {user.avatar_url ? <img width={300} className='rounded-full border-[2px] border-[#30373C]  ' src={user.avatar_url} alt="" />
               :
               <Image width={300} className='rounded-full' src={default_image} alt="default user" />}
           </div>

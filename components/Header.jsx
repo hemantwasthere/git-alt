@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import { AiFillGithub } from 'react-icons/ai'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { IoMdArrowDropdown } from 'react-icons/io'
 
-const Navbar = ({ searchValue, setSearchValue, fetchUser }) => {
+const Navbar = ({ searchValue, setSearchValue, fetchUser, user }) => {
 
     return (
         // navbar container  
@@ -24,21 +24,30 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser }) => {
                     </div>
                 </div>
 
+                {/* navbar links  */}
                 <div className='flex ml-4 mt-1 items-center space-x-5'>
                     {/* Pull requests  */}
-                    <p className='font-semibold w-[93px] text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer '>Pull requests</p>
+                    <p className='font-semibold w-[93px] text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>Pull requests</p>
 
                     {/* Issues  */}
-                    <p className='font-semibold text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer '>Issues</p>
+                    <p className='font-semibold text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>Issues</p>
 
                     {/* Marketplace  */}
-                    <p className='font-semibold text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer'>Marketplace</p>
+                    <p className='font-semibold text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm'>Marketplace</p>
 
                     {/* Explore  */}
-                    <p className='font-semibold text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer '>Explore</p>
+                    <p className='font-semibold text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>Explore</p>
 
                 </div>
 
+            </div>
+
+            {/* user image  */}
+            <div className='flex absolute right-4 items-center space-x-[1px] cursor-pointer'>
+                <div className=' rounded-full  mt-[18px] h-[25px] w-[25px] border-[1px] border-[#30373C] '>
+                    <img src={user.avatar_url} className='rounded-full' />
+                </div>
+                <IoMdArrowDropdown className='mt-[18px]' color='F1F7FC' />
             </div>
         </div>
     )
