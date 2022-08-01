@@ -1,6 +1,8 @@
 import { AiFillGithub } from 'react-icons/ai'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdArrowDropdown } from 'react-icons/io'
+import default_image from '../public/default_image.png'
+import Image from 'next/image'
 
 const Navbar = ({ searchValue, setSearchValue, fetchUser, user }) => {
 
@@ -46,12 +48,18 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser, user }) => {
             </div>
 
             {/* user image  */}
-            <div className='flex absolute right-4 items-center space-x-[1px] cursor-pointer'>
-                <div className=' rounded-full  mt-[18px] h-[25px] w-[25px] border-[1px] border-[#30373C] '>
-                    <img src={user.avatar_url} className='rounded-full' />
+            {Object.keys(user).length !== 0 &&
+                <div className='flex absolute right-4 items-center space-x-[1px] cursor-pointer'>
+                    <div className=' rounded-full  mt-[18px] h-[25px] w-[25px] border-[1px] border-[#30373C] '>
+                        {user.avatar_url ?
+                            <img src={user.avatar_url} className='rounded-full' />
+                            :
+                            <Image className='rounded-full w-[25px] h-[25px] ' src={default_image} alt="default user" />
+                        }
+                    </div>
+                    <IoMdArrowDropdown className='mt-[18px]' color='F1F7FC' />
                 </div>
-                <IoMdArrowDropdown className='mt-[18px]' color='F1F7FC' />
-            </div>
+            }
         </div>
     )
 }
