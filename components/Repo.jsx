@@ -58,8 +58,6 @@ const Repo = ({ id, html_url, name, description, language, stargazers_count, for
     }
 
     const currDate = new Date(updated_at).getTime()
-    
-    console.log(moment(currDate).fromNow())
 
     return (
         <div key={id} className=' bg-[#0D1117] border-t-[1px] border-b-[1px] border-[#21272C] border-solid w-[800px] h-[165px] py-[10px] '>
