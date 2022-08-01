@@ -18,9 +18,9 @@ const UserProfile = ({ user }) => {
         <div className='bg-[#0D1117] absolute left-[0px] top-[162.5px] w-[550px]  '>
           {/* profile image  */}
           <div className='ml-[200px] mt-[-56px] z-50 '>
-            { user.avatar_url ? <img width={300} className='rounded-full' src={user.avatar_url} alt="" />
-            :
-            <Image width={300} className='rounded-full' src={default_image} alt="default user" />}
+            {user.avatar_url ? <img width={300} className='rounded-full' src={user.avatar_url} alt="" />
+              :
+              <Image width={300} className='rounded-full' src={default_image} alt="default user" />}
           </div>
           {/* Name  */}
           <p className='text-xl text-[#C8D0D9] absolute font-semibold left-[200px] top-[250px] tracking-wide '>{user.name}</p>
@@ -39,14 +39,14 @@ const UserProfile = ({ user }) => {
 
             <div className='hover:text-[#59A7FF] cursor-pointer flex items-center group transition-all duration-300 space-x-1'>
               <TbUsers />
-              <span className='text-[#C9D0D8] font-semibold group-hover:text-[#59A7FF] transition-all duration-300  '>{user.followers > 1000 ? user.followers / 1000 + 'k' : user.followers}</span>
+              <span className='text-[#C9D0D8] font-semibold group-hover:text-[#59A7FF] transition-all duration-300  '>{user.followers > 1000 ? (user.followers / 1000).toFixed(1) + 'k' : user.followers}</span>
               <p className='cursor-pointer'>followers</p>
             </div>
 
             <p className='text-[#C9D0D8] font-semibold '>·</p>
 
             <div className='flex hover:text-[#59A7FF] cursor-pointer group transition-all duration-300 space-x-1'>
-              <span className='text-[#C9D0D8] font-semibold group-hover:text-[#59A7FF] transition-all duration-300'>{user.following > 1000 ? user.following / 1000 + 'k' : user.following}</span>
+              <span className='text-[#C9D0D8] font-semibold group-hover:text-[#59A7FF] transition-all duration-300'>{user.following > 1000 ? (user.following / 1000).toFixed(1) + 'k' : user.following}</span>
               <p className='cursor-pointer'>following</p>
             </div>
 
