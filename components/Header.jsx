@@ -74,15 +74,26 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser, user }) => {
                     </div>
                     <IoMdArrowDropdown className='mt-[18px]' color='F1F7FC' />
                 </div>
-                : <p onClick={handleSignIn} className='font-semibold absolute right-0 top-[20px] w-[140px] text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>Sign in with github</p>
+                : <p onClick={handleSignIn} className='font-semibold absolute right-0 top-[20px] w-[140px] text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>Sign in with GitHub</p>
             }
             {
-                showModal && <div onClick={() => { setShowModal(false), handleSignOut() }} className='absolute bg-[#161A23] text-[#C9D1D9] border-[1px] border-[#31363C] rounded-md right-5 z-10 top-[50px] ' >
+                showModal && <div onClick={() => { setShowModal(false), handleSignOut() }} className='absolute bg-[#161A23] text-[#C9D1D9] border-[1px] border-[#31363C] rounded-md right-5 z-50 top-[50px] ' >
+
+                    {/* tooltip  */}
+                    <div className="absolute top-[-9.5px] left-[168px] ">
+                        <div className="w-[13x] h-[10px] border-[#161A23] border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-b-[10px] ">
+                        </div>
+                        {/* tooltip left border  */}
+                        <div className='bg-[#30373C] absolute top-[-1px] left-[2.5px] rotate-[28deg] w-[1px] h-[10px]  ' ></div>
+                        {/* tooltip right border  */}
+                        <div className='bg-[#30373C] absolute top-[0px] left-[7px] rotate-[155deg] w-[1px] h-[10px]  ' ></div>
+                    </div>
+
                     <div className='border-b-[1px] py-2 border-[#31363C] pl-[18px] pr-[55px]'>
                         <p>Signed in as</p>
                         <span className='text-[#C9D1D9] font-semibold ' >{currentUser.reloadUserInfo.screenName}</span>
                     </div>
-                    <p className='hover:bg-[#1F6EEA]  hover:text-white cursor-pointer py-2 pl-[18px] pr-[55px]'>Sign Out</p>
+                    <p className='hover:bg-[#1F6EEA]  hover:text-white cursor-pointer py-2 pl-[18px] pr-[55px] rounded-bl-md rounded-br-md '>Sign Out</p>
                 </div>
             }
         </div >
