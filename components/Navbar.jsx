@@ -61,7 +61,7 @@ const Navbar = ({ user }) => {
             </div>
             ) : (
                 <div className='w-full h-[91.3%] overflow-hidden absolute flex justify-center items-center bg-[#0D1117] text-4xl text-white '>
-                    <p>Please search a user</p>
+                    <p>Please search a user with username</p>
                 </div>
             )
 
