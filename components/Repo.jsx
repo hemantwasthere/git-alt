@@ -59,6 +59,34 @@ const Repo = ({ id, html_url, name, description, language, stargazers_count, for
 
     const currDate = new Date(updated_at).getTime()
 
+    function timeSince(timeStamp) {
+        var time = new Date(timeStamp);
+        var now = new Date(),
+            secondsPast = (now.getTime() - time.getTime()) / 1000;
+        var exactTime = time.getHours() + ' : ' + time.getMinutes();
+        if (secondsPast < 60) {
+            return parseInt(secondsPast) + 'seconds'
+        }
+        if (secondsPast < 3600) {
+            return parseInt(secondsPast / 60) + 'minutes'
+        }
+        if (secondsPast <= 86400) {
+            return parseInt(secondsPast / 3600) + 'hours'
+        }
+        if (secondsPast > 86400) {
+            // var day = time.getDate();
+            // var month = time.toDateString()
+            //     .match(/ [a-zA-Z]*/)[0]
+            //     .replace(' ', '');
+            // var year = time.getFullYear() == now.getFullYear() ? '' : ' ' + time.getFullYear();
+            // return {
+            //     date: day + ' ' + month + year,
+            //     exactTime: exactTime
+            // };
+            return parseInt(secondsPast / 86400) + ' days'
+        }
+    }
+
     return (
         <div key={id} className=' bg-[#0D1117] border-t-[1px] border-b-[1px] border-[#21272C] border-solid w-[800px] h-[165px] py-[10px] '>
 
@@ -90,7 +118,7 @@ const Repo = ({ id, html_url, name, description, language, stargazers_count, for
 
             {/* Upadated  */}
             <p className='text-[#8B959F] text-sm font-normal mt-[-20px] ml-[180px] '>
-                Updated{" "}{moment(currDate).fromNow() }
+                Updated{" "}{timeSince(currDate)}{" "}ago
             </p>
         </div>
     )
