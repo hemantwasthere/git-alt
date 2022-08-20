@@ -108,8 +108,8 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser }) => {
                     <div className="flex-auto my-auto relative self-stretch mx-3 ">
                         <div className='relative w-fit rounded-lg h-fit flex ' >
                             <input value={searchValue} onKeyDown={(e) => fetchUser(e)} onChange={(e) => setSearchValue(e.target.value)} type="text" className='bg-[#0D1117] text-[#C3C3C4] transition-all duration-300 ease-in-out w-[220px] lg:w-[300px] outline-none border-[1px] border-[#31363C] rounded-lg pl-3 py-1 focus:w-[280px] lg:focus:w-[500px] placeholder:text-[#C3C3C4] focus:bg-[#171A22] ' placeholder='Search or jump to...' />
-                            <div className='boxee ml-[-30px] flex items-center '>
-                                <p className='text-[#979A9C] px-2 border-[1px] border-[#31363C] rounded-md '>/</p>
+                            <div className='boxe ml-[-25px] flex items-center my-1.5 '>
+                                <CgFormatSlash size={20} className='text-[#979A9C] text-sm w-full border-[1px] border-[#45484D] rounded-md ' />
                             </div>
                         </div>
                     </div>
@@ -144,8 +144,8 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser }) => {
                     </div>
                     : <p onClick={handleSignIn} className='hidden md:flex font-semibold absolute right-4 top-5 hover:text-[#BABBBD] text-white cursor-pointer text-sm '>
                         Sign In
-                        <FiLogIn className='ml-1 my-auto' size={20}/>
-                        </p>
+                        <FiLogIn className='ml-1 my-auto' size={20} />
+                    </p>
                 }
 
 
