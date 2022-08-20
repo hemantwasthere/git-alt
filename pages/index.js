@@ -30,9 +30,9 @@ export default function Home() {
       </Head>
 
       <Header fetchUser={fetchUser} searchValue={searchValue} setSearchValue={setSearchValue} user={user} setUser={setUser} />
-      <Navbar user={user} />
+      {/* <Navbar user={user} />
       <UserProfile user={user} />
-      <Repositories user={user} />
+      <Repositories user={user} /> */}
 
     </div>
   )
