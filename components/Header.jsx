@@ -1,13 +1,13 @@
+import { signInWithPopup, signOut } from 'firebase/auth'
+import { useState } from 'react'
 import { AiFillGithub } from 'react-icons/ai'
+import { BiBell } from 'react-icons/bi'
+import { CgFormatSlash } from 'react-icons/cg'
+import { FiLogIn } from 'react-icons/fi'
 import { HiOutlineMenu } from 'react-icons/hi'
 import { IoMdArrowDropdown } from 'react-icons/io'
-import { signInWithPopup, signOut } from 'firebase/auth'
-import { auth, provider } from '../firebase'
-import { CgFormatSlash } from 'react-icons/cg'
-import { BiBell } from 'react-icons/bi'
 import { MdLogout } from 'react-icons/md'
-import { FiLogIn } from 'react-icons/fi'
-import { useState } from 'react'
+import { auth, provider } from '../firebase'
 
 const Navbar = ({ searchValue, setSearchValue, fetchUser }) => {
 
@@ -105,11 +105,11 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser }) => {
                 <div className='hidden md:flex flex-col md:flex-row w-full flex-[2] md:flex-[0] mr-0 mt-3 md:mt-[0]  ' >
 
                     {/* search input  */}
-                    <div className="flex-auto my-auto relative self-stretch mx-3 ">
+                    <div className="flex-auto my-auto relative self-stretch ml-[1.5px] mr-[4px] ">
                         <div className='relative w-fit rounded-lg h-fit flex ' >
-                            <input value={searchValue} onKeyDown={(e) => fetchUser(e)} onChange={(e) => setSearchValue(e.target.value)} type="text" className='bg-[#0D1117] text-[#C3C3C4] transition-all duration-300 ease-in-out w-[220px] lg:w-[300px] outline-none border-[1px] border-[#31363C] rounded-lg pl-3 py-1 focus:w-[280px] lg:focus:w-[500px] placeholder:text-[#C3C3C4] focus:bg-[#171A22] ' placeholder='Search or jump to...' />
-                            <div className='boxe ml-[-30px] flex items-center my-1.5 '>
-                                <CgFormatSlash size={25} className='text-[#979A9C] text-sm w-full border-[1px] border-[#45484D] rounded-md ' />
+                            <input value={searchValue} onKeyDown={(e) => fetchUser(e)} onChange={(e) => setSearchValue(e.target.value)} type="text" className='bg-[#0D1117] text-[#C3C3C4] transition-all duration-300 ease-in-out w-[220px] lg:w-[300px] outline-none border-[1px] border-[#31363C] rounded-lg pl-3 py-1 focus:w-[280px] lg:focus:w-[500px] placeholder:text-[#C3C3C4] focus:bg-[#171A22] text-sm ' placeholder='Search or jump to...' />
+                            <div className='boxe ml-[-25px] flex items-center my-1.5 '>
+                                <CgFormatSlash size={20} className='text-[#979A9C] text-sm w-full border-[1px] border-[#45484D] rounded-[4px] ' />
                             </div>
                         </div>
                     </div>
