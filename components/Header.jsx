@@ -32,7 +32,7 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser }) => {
     return (
         <>
             {/* Header */}
-            <div className='md:flex p-3 md:px-5 lg:px-7 flex flex-wrap border-b-[1px] border-[#171A22] md:flex-nowrap bg-[#171A22] md:bg-[#171B23] shadow-lg '>
+            <div className='md:flex p-3 md:px-5 lg:px-7 flex flex-wrap border-b-[1px] border-[#171A22] md:flex-nowrap bg-[#171B23] shadow-lg '>
 
                 <div onClick={() => setShowMenu(!showMenu)} className='md:hidden hover:text-[#BABBBD] text-white my-auto cursor-pointer' >
                     <HiOutlineMenu size={30} />

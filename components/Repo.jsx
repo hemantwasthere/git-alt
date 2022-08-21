@@ -1,8 +1,8 @@
-import React from 'react'
-import { BsFillCircleFill } from 'react-icons/bs'
-import { AiOutlineStar } from 'react-icons/ai'
-import { TbGitFork } from 'react-icons/tb'
 import moment from 'moment'
+import React from 'react'
+import { AiOutlineStar } from 'react-icons/ai'
+import { BsFillCircleFill } from 'react-icons/bs'
+import { TbGitFork } from 'react-icons/tb'
 
 
 const Repo = ({ id, html_url, name, description, language, stargazers_count, forks_count, updated_at }) => {
@@ -88,38 +88,54 @@ const Repo = ({ id, html_url, name, description, language, stargazers_count, for
     }
 
     return (
-        <div key={id} className=' bg-[#0D1117] border-t-[1px] border-b-[1px] border-[#21272C] border-solid w-[800px] h-[165px] py-[10px] '>
+        <div key={id} className='w-full justify-between py-4 flex bg-[#0D1117] border-b-[1.5px]  border-[#21272C] border-solid '>
+            <div className='inline-block ml-4' >
+                {/* repo name  */}
+                <div className='mb-2 w-fit'>
+                    <a className='ml-2' rel="noreferrer" target='_blank' href={html_url} >
+                        <p className=' text-[#58A6FF] w-fit cursor-pointer text-xl font-semibold hover:underline'>{name}</p>
+                    </a>
+                </div>
 
-            {/* repo name  */}
-            <a rel="noreferrer" target='_blank' href={html_url} >
-                <p className=' text-[#58A6FF] cursor-pointer text-xl font-semibold hover:underline mt-[10px] '>{name}</p>
-            </a>
+                <div className='mb-6'>
+                    {/* Description  */}
+                    <p className='text-[#8B959F] text-sm font-normal mb-2 pr-4  '>{description}</p>
+                </div>
 
-            {/* Description  */}
-            <p className='text-[#8B959F] text-md font-normal mt-[5px] ml-0  '>{description}</p>
+                <div className='mt-2 flex'>
+                    {/* most used language  */}
+                    <div className='mr-3 flex items-center'>
+                        <BsFillCircleFill className='text-[#8B959F] font-normal hover:underline mr-[4px] ' color={languageDetector(language)} />
+                        <p className='text-[#8B959F] text-sm font-normal' >{language ? language : 'No lang'}</p>
+                    </div>
 
-            {/* most used language  */}
-            <BsFillCircleFill className='text-[#8B959F] text-md font-normal hover:underline mt-[35px]' color={languageDetector(language)} />
-            <p className='text-[#8B959F] text-sm font-normal mt-[-20px] ml-5 ' >{language ? language : 'no lang'}</p>
+                    {/* star  */}
+                    {stargazers_count !== 0 &&
+                        <div className='mr-3 flex items-center'>
+                            <AiOutlineStar className='text-[#8B959F] font-normal hover:underline mr-[2px] ' size={18} color='8B959F' />
+                            <p className='text-[#8B959F] text-sm font-normal ' >{stargazers_count}</p>
+                        </div >
+                    }
 
-            {/* star  */}
-            {stargazers_count !== 0 &&
-                <div className='flex mt-[-19px] ml-[90px] items-center space-x-1 '>
-                    <AiOutlineStar className='text-[#8B959F] text-md font-normal hover:underline ' color='8B959F' />
-                    <p className='text-[#8B959F] text-sm font-normal ' >{stargazers_count}</p>
-                </div >}
+                    {/* fork  */}
+                    {forks_count !== 0 &&
+                        <div className='mr-3 flex items-center'>
+                            <TbGitFork className='text-[#8B959F] font-normal hover:underline mr-[2px] ' size={18} color='8B959F' />
+                            <p className='text-[#8B959F] text-sm font-normal ' >{forks_count}</p>
+                        </div >
+                    }
 
-            {/* fork  */}
-            {forks_count !== 0 &&
-                <div className='flex mt-[-19px] ml-[130px] items-center space-x-1 '>
-                    <TbGitFork className='text-[#8B959F] text-md font-normal hover:underline ' color='8B959F' />
-                    <p className='text-[#8B959F] text-sm font-normal ' >{forks_count}</p>
-                </div >}
+                    {/* Upadated  */}
+                    <p className='hidden md:flex items-center text-[#8B959F] text-[12px] '>
+                        Updated{" "}{timeSince(currDate)}{" "}ago
+                    </p>
 
-            {/* Upadated  */}
-            <p className='text-[#8B959F] text-sm font-normal mt-[-20px] ml-[180px] '>
-                Updated{" "}{timeSince(currDate)}{" "}ago
-            </p>
+                </div>
+                {/* Upadated  */}
+                <p className='md:hidden flex items-center mt-[10px] text-[#8B959F] text-[12px] '>
+                    Updated{" "}{timeSince(currDate)}{" "}ago
+                </p>
+            </div>
         </div>
     )
 }
