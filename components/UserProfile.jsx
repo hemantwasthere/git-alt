@@ -15,15 +15,15 @@ const UserProfile = ({ user }) => {
   return (
     <>
       {user && user.login && (
-        <div className='bg-[#171B23] md:bg-[#0D1016]'>
-          <div className='flex items-center mb-4 w-full'>
+        <div className='bg-[#171B23] md:bg-[#0D1016] md:pt-9 col-span-1 border-y-[#20272D] '>
+          <div className='flex items-center mb-4 w-full md:flex-col'>
             {/* profile image  */}
-            <div className='relative inline-block shrink-0 mt-2 mx-4 w-[50px] sm:w-[100px] '>
+            <div className='relative inline-block shrink-0 mt-2 mx-4 w-[50px] sm:w-[100px] md:w-[260px]'>
               {user.avatar_url ? <img className='w-full rounded-full border-[2px] border-[#30373C]  ' src={user.avatar_url} alt="" />
                 :
                 <Image width={300} className='rounded-full' src={default_image} alt="default user" />}
             </div>
-            <div className='float-left py-3 sticky '>
+            <div className='float-left py-3 sticky md:w-full md:pl-4 '>
               <h1>
                 {/* Name  */}
                 <p className=' block overflow-hidden text-2xl text-[#C8D0D9] font-[500]'>{user.name}</p>
