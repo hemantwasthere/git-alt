@@ -32,8 +32,7 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser }) => {
     return (
         <>
             {/* Header */}
-
-            <div className='md:flex p-3 md:px-5 lg:px-7 flex flex-wrap md:flex-nowrap bg-[#171A22] shadow-lg '>
+            <div className='md:flex p-3 md:px-5 lg:px-7 flex flex-wrap border-b-[1px] border-[#171A22] md:flex-nowrap bg-[#171A22] md:bg-[#171B23] shadow-lg '>
 
                 <div onClick={() => setShowMenu(!showMenu)} className='md:hidden hover:text-[#BABBBD] text-white my-auto cursor-pointer' >
                     <HiOutlineMenu size={30} />
@@ -61,27 +60,27 @@ const Navbar = ({ searchValue, setSearchValue, fetchUser }) => {
                         {/* navbar links  */}
                         <div className='flex flex-col mt-5'>
                             {/* Pull requests  */}
-                            <div className='border-y-[1px] border-[#31363C]'>
+                            <div className='border-t-[1px] border-[#31363C]'>
                                 <p className='font-semibold py-2 mx-auto text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>Pull requests</p>
                             </div>
 
                             {/* Issues  */}
-                            <div className='border-y-[1px] border-[#31363C]'>
+                            <div className='border-t-[1px] border-[#31363C]'>
                                 <p className='font-semibold py-2 mx-auto text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>Issues</p>
                             </div>
 
                             {/* Marketplace  */}
-                            <div className='border-y-[1px] border-[#31363C]'>
+                            <div className='border-t-[1px] border-[#31363C]'>
                                 <p className='font-semibold py-2 mx-auto text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm'>Marketplace</p>
                             </div>
 
                             {/* Explore  */}
-                            <div className='border-y-[1px] border-[#31363C]'>
+                            <div className='border-t-[1px] border-[#31363C]'>
                                 <p className='font-semibold py-2 mx-auto text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>Explore</p>
                             </div>
 
                             {/* User Profile  */}
-                            {currentUser && <div className='border-y-[1px] border-[#31363C]'>
+                            {currentUser && <div className='border-t-[1px] border-[#31363C]'>
                                 <p className='font-semibold flex py-2 m-auto text-[#F1F7FC] hover:text-[#BABBBD] cursor-pointer text-sm '>
                                     <img width={20} height={20} src={currentUser.photoURL} alt='user' className='rounded-full my-auto mr-1' />
                                     {currentUser.reloadUserInfo.screenName}

@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import Header from '../components/Header'
-import UserProfile from '../components/UserProfile'
-import Repositories from '../components/Repositories'
 import { useState } from 'react'
+import Header from '../components/Header'
+import Navbar from '../components/Navbar'
+import Repositories from '../components/Repositories'
+import UserProfile from '../components/UserProfile'
 
 export default function Home() {
 
@@ -20,7 +20,7 @@ export default function Home() {
       setSearchValue('')
     }
   }
-  
+
   return (
     <div>
       <Head>
