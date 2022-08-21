@@ -30,11 +30,13 @@ export default function Home() {
       </Head>
 
       <Header fetchUser={fetchUser} searchValue={searchValue} setSearchValue={setSearchValue} user={user} setUser={setUser} />
-      <div className='md:grid grid-cols-3 '>
-        <UserProfile user={user} />
-        <Navbar user={user} />
+      <div className='bg-[#0D1016] relative'>
+        {user.login && <div className='hidden md:inline-flex w-full h-[1px] bg-[#20272D] absolute z-10 top-[69px] '></div>}
+        <div className='md:grid grid-cols-3 '>
+          <UserProfile user={user} />
+          <Navbar user={user} />
+        </div>
       </div>
-      {/* <Repositories user={user} /> */}
 
     </div>
   )
