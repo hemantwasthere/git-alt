@@ -30,9 +30,11 @@ export default function Home() {
       </Head>
 
       <Header fetchUser={fetchUser} searchValue={searchValue} setSearchValue={setSearchValue} user={user} setUser={setUser} />
-      <Navbar user={user} />
-      <UserProfile user={user} />
-      <Repositories user={user} />
+      <div className='md:grid grid-cols-3 '>
+        <UserProfile user={user} />
+        <Navbar user={user} />
+      </div>
+      {/* <Repositories user={user} /> */}
 
     </div>
   )
