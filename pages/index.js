@@ -9,6 +9,8 @@ export default function Home() {
 
   const [searchValue, setSearchValue] = useState('')
   const [user, setUser] = useState({})
+  const [userNotFound, setUserNotFound] = useState(false)
+  const [pleaseSearchUser, setPleaseSearchUser] = useState(false)
 
   const fetchUser = (e) => {
     if (e.key === 'Enter') {
@@ -29,12 +31,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
+      {/* Header  */}
       <Header fetchUser={fetchUser} searchValue={searchValue} setSearchValue={setSearchValue} user={user} setUser={setUser} />
+
       <div className='bg-[#0D1016] relative'>
+        {/* please search user heading  */}
+        {pleaseSearchUser && <div className='overflow-hidden w-full mx-auto z-50 mt-24 flex justify-center items-center bg-[#0D1117]  text-2xl md:text-4xl text-white '>
+          <p className='px-[1px]'>Please search a user with username</p>
+        </div>}
+
+        {/* user not found heading */}
+        {userNotFound && <div className='overflow-hidden w-full mx-auto z-50 mt-24 flex justify-center items-center bg-[#0D1117]  text-2xl md:text-4xl text-white '>
+          <p className='px-[1px]'>User not found</p>
+        </div>}
+
+        {/* header line  */}
         {user.login && <div className='hidden md:inline-flex w-full h-[1px] bg-[#20272D] absolute z-10 top-[69px] '></div>}
-        <div className='md:grid grid-cols-3 '>
+
+        {/* user profile and navbar  */}
+        <div className={`${(pleaseSearchUser || userNotFound) ? 'hidden' : 'md:grid'} grid-cols-3  `}>
           <UserProfile user={user} />
-          <Navbar user={user} />
+          <Navbar user={user} setUserNotFound={setUserNotFound} setPleaseSearchUser={setPleaseSearchUser} />
         </div>
       </div>
 
