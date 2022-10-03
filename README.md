@@ -2,6 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 live site - https://githubbyme.netlify.app/
 
+### Screenshots 📷
+
+![image](https://user-images.githubusercontent.com/85151171/193634737-39777042-30df-4b2a-8afd-634a02ad90e5.png)
+
+![image](https://user-images.githubusercontent.com/85151171/193634920-c9ce60c1-9491-4ed9-875a-46c79589b760.png)
+
+
 ## Getting Started
 
 First, run the development server:
