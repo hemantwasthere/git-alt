@@ -8,6 +8,12 @@ live site - https://githubbyme.netlify.app/
 
 ![image](https://user-images.githubusercontent.com/85151171/193634920-c9ce60c1-9491-4ed9-875a-46c79589b760.png)
 
+## Steps / Guidance
+* You can search any github authorized user in this app and checkout there profile
+* for searching the user you can see a search bar on the top left 
+* once you write user's github username in the search bar then press enter to get the details of the user
+* and you check his repositories maximum upto 30, thats the repo limit from GitHub API
+
 
 ## Getting Started
 
