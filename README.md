@@ -12,7 +12,7 @@ live site - https://gitalt.netlify.app/
 * You can search any github authorized user in this app and checkout there profile
 * for searching the user you can see a search bar on the top left 
 * once you write user's github username in the search bar then press enter to get the details of the user
-* and you check his repositories maximum upto 30, thats the repo limit from GitHub API
+* and you check his repositories maximum upto 30, thats the repo limit from GitHub API.
 
 
 ## Getting Started
